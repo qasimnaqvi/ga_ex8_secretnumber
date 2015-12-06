@@ -10,30 +10,39 @@ public class App
 	public static void main(String[] args)
 	{
 		Scanner inp = new Scanner(System.in);
+		System.out.println("did you pay your bills? (yes/no)");
+		String paid = inp.nextLine();
 
-		System.out.print("Enter your first name: ");
-		String firstName = inp.nextLine();
+		System.out.println("did you cancel");
+		String canceled = inp.nextLine();
 
-		System.out.print("Enter your last name: ");
-		String lastName = inp.nextLine();
+		System.out.println("are you an admin");
+		String admin = inp.nextLine();
 
-		String fullName = cleanFullName(firstName, lastName);
-		System.out.println("Full name: "+ fullName);
-	}
+		System.out.println("are you signed in");
+		String signedIn = inp.nextLine();
 
-	static String cleanFullName(String firstName, String lastName)
-	{
-		firstName = capitalize(firstName);
-		lastName = capitalize(lastName);
 
-		return firstName + " " + lastName;
-	}
-
-	private static String capitalize(String firstName)
-	{
-		firstName = firstName.toLowerCase();
-		firstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
-		return firstName;
+		if (paid.equals("no") || canceled.equals("yes"))
+		{
+			System.out.println("go away");
+		}
+		else if (signedIn.equals("yes") && admin.equals("yes"))
+		{
+			System.out.println("you can see and change all the pages");
+		}
+		else if (signedIn.equals("yes") && admin.equals("no"))
+		{
+			System.out.println("you can see all the pages");
+		}
+		else if (signedIn.equals("no"))
+		{
+			System.out.println("you can't see any of the pages, please sign in");
+		}
+		else
+		{
+			System.out.println("sorry charlie");
+		}
 	}
 }
 
