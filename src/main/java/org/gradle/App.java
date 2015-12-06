@@ -7,7 +7,15 @@ public class App
 {
 	public static void main(String[] args)
 	{
-		System.out.println("Some java");
+		concatStrings();
+	}
+
+	private static void concatStrings()
+	{
+		String lastBit = "a string";
+		String wholeString = "This is "+ lastBit;
+
+		System.out.println(wholeString);
 	}
 }
 
