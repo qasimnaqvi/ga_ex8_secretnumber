@@ -21,12 +21,9 @@ public class App
 
 		//run the function to check the user's number
 		checkUsersNumber(inp);
-
-		//bonus: add one more line that says "you didn't guess it was INSERT_THE_NUMBER.  better luck next time" if the @did_they_win variable isn't true
-
 	}
 
-	static boolean checkUsersNumber(Scanner inp)
+	static void checkUsersNumber(Scanner inp)
 	{
 	// define the number of tries the user has and save it to a variable
 	// google how to randomly generate a number between 1-10, save that number to a variable called @random_number
@@ -43,7 +40,7 @@ public class App
 			if(playerGuess == randomNumber)
 			{
 				System.out.println("OH MY GAWD YOU GUESSED THE SECRET NUMBAH, "+ randomNumber +"!  YOU WIN!");
-				return true;
+				return;
 			}
 
 			//check to see if the player_guess is more than the @random_number
@@ -54,8 +51,8 @@ public class App
 		}
 
 		System.out.println("you didn't guess it was "+ randomNumber +".  better luck next time");
-		//At end of loop, return false
-		return false;
+		//After loop...
+		//bonus: add one more line that says "you didn't guess it was INSERT_THE_NUMBER.  better luck next time" if the @did_they_win variable isn't true
 	}
 }
 
